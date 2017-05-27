@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { GoodsComponent } from './goods/goods.component';
 import { GoodsListComponent } from './goods-list/goods-list.component';
 import { GoodInfoComponent } from './good-info/good-info.component';
+import { AlertModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GoodInfoComponent } from './good-info/good-info.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
