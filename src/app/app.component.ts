@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  ngOnInit() {
+    debugger;
+    console.log('hello world');
+  }
   title = 'app works!';
 }
