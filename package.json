@@ -4,12 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open --proxy-config ",
     "build": "ng build",
     "test": "ng test",
     "test-once": "ng test --watch false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "cd backend-stub && npm start && cd .."
   },
   "pre-commit": [
     "lint"
@@ -25,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.3",
     "jquery": "^3.2.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
