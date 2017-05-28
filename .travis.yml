@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - "7"
 script:
-  - npm lint
-  - npm test-once
-  - npm e2e
+  - npm run lint
+  - npm run test-once
+  - npm run e2e
