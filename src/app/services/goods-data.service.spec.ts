@@ -41,7 +41,7 @@ describe('GoodsDataService', () => {
 
         mockBackend.connections.subscribe((connection) => {
           connection.mockRespond(new Response(new ResponseOptions({
-            body: JSON.stringify(mockResponse)
+            body: JSON.stringify({data: mockResponse})
           })));
         });
 
