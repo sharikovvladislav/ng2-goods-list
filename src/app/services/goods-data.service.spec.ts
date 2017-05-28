@@ -26,8 +26,6 @@ describe('GoodsDataService', () => {
   describe('getGoods()', () => {
     it('should return an Promise<Good[]>',
       inject([GoodsDataService, XHRBackend], (service: GoodsDataService, mockBackend: MockBackend) => {
-        expect(false).toEqual(true);
-
         const mockResponse = [
           {id: 11, name: 'Mr. Nice'},
           {id: 12, name: 'Narco'},
@@ -47,7 +45,6 @@ describe('GoodsDataService', () => {
           })));
         });
 
-        expect(false).toEqual(true);
         service.getGoods()
           .then(goods => {
             expect(goods.length).toEqual(10);
