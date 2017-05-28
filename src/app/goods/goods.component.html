@@ -5,12 +5,15 @@
 <!--<app-good-info></app-good-info>
 <app-goods-list></app-goods-list>-->
 
-<div class="container full-heigth">
-  <div class="row">
-    <div class="bordered-block col-md-10 col-sm-10 col-xs-10">
+<div class="row row-offcanvas row-offcanvas-right">
+  <div class="col-12 col-md-9">
+    <p class="float-right hidden-md-up">
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <div class="jumbotron">
       <app-good-info></app-good-info>
     </div>
-    <div class="bordered-block col-md-2 col-sm-2 col-xs-2">
+    <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
       <app-goods-list></app-goods-list>
     </div>
   </div>

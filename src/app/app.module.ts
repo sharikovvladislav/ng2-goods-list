@@ -8,13 +8,15 @@ import { GoodsComponent } from './goods/goods.component';
 import { GoodsListComponent } from './goods-list/goods-list.component';
 import { GoodInfoComponent } from './good-info/good-info.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GoodsComponent,
     GoodsListComponent,
-    GoodInfoComponent
+    GoodInfoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
