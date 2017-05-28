@@ -1,28 +1,9 @@
-# Ng2GoodsList
+## TODO
+- сделать заглушку-сервер с запросами GET /goods, PUT /goods/:id, как бд скорее всего файл json
+- реализуем фичу: делаем запрос за списком товаров, список товаров заполняется данными, при выборе товара инфа по товару появляется в левой части страницы. есть возможно нажать на кнопку сохранить, тогда данные должны быть обновлены (rxjs должен быть)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### конкретнее
+- делаем сервис в котором будут храниться данные компонента GoodsComponent (rxjs)
+- GoodsComponent делает запрос за списком и заполняет сервис данными
+- GoodsListComponent слышит эти данные и обновляется
+- по выбору товара в GoodsListComponent обновляется данные в сервисе (выбранный товар) и это слышит GoodsInfoComponenent, там обновляется товар
