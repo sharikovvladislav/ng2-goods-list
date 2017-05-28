@@ -4,13 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --proxy-config ",
+    "start": "ng serve --open --proxy-config cli-proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "test-once": "ng test --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "cd backend-stub && npm start && cd .."
+    "server": "npm start --prefix backend-stub"
   },
   "pre-commit": [
     "lint"
