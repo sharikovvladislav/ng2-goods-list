@@ -1,69 +1,61 @@
 /*
- * Style tweaks
- * --------------------------------------------------
+ * Globals
  */
-html,
+
 body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555;
 }
-body {
-  padding-top: 70px;
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
 }
-footer {
-  padding: 30px 0;
-}
+
 
 /*
- * Off Canvas
- * --------------------------------------------------
+ * Override Bootstrap's default container.
  */
-@media screen and (max-width: 767px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all .25s ease-out;
-         -o-transition: all .25s ease-out;
-            transition: all .25s ease-out;
-  }
 
-  .row-offcanvas-right {
-    right: 0;
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
   }
+}
 
-  .row-offcanvas-left {
-    left: 0;
-  }
 
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -100%; /* 12 columns */
-  }
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
 
-  .row-offcanvas-right.active
-  .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
-  }
 
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -100%; /* 12 columns */
-  }
 
-  .row-offcanvas-left.active
-  .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
-  }
+/*
+ * Footer
+ */
 
-  .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
-  }
-
-  .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
-  }
-
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 50%; /* 6 columns */
-  }
+.blog-footer {
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
 }
