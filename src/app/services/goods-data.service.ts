@@ -16,9 +16,7 @@ export class GoodsDataService {
   getGoods(): Promise<Good[]> {
     return this.http.get(this.goodsUrl)
       .toPromise()
-      .then((response) => {
-        return response.json().data as Good[];
-      })
+      .then((response) => response.json().data as Good[])
       .catch(this.handleError);
   }
 
