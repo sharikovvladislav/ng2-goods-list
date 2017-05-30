@@ -10,12 +10,15 @@ describe('GoodsComponent', () => {
   let component: GoodsComponent;
   let fixture: ComponentFixture<GoodsComponent>;
   let goodsDataService;
+  const goodsDataServiceStub = {
+    getGoods: () => {}
+  };
   let spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ GoodsComponent, GoodInfoComponent, GoodsListComponent ],
-      providers: [ GoodsDataService ]
+      providers: [ { provide: GoodsDataService, useValue: goodsDataServiceStub } ]
     })
     .compileComponents();
   }));
@@ -25,7 +28,7 @@ describe('GoodsComponent', () => {
     // TwainService actually injected into the component
     goodsDataService = fixture.debugElement.injector.get(GoodsDataService);
 
-    // Setup spy on the `getQuote` method
+    // Setup spy on the `getGoods` method
     spy = spyOn(goodsDataService, 'getGoods')
       .and.returnValue(Promise.resolve([]));
 
