@@ -3,6 +3,8 @@ import {TestBed, async, inject} from '@angular/core/testing';
 import {HttpModule, Response, ResponseOptions, XHRBackend} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 
+import { Good } from '../model/good';
+
 import {GoodsDataService} from './goods-data.service';
 
 describe('GoodsDataService', () => {
@@ -58,6 +60,26 @@ describe('GoodsDataService', () => {
                 {id: 19, name: 'Magma'},
                 {id: 20, name: 'Tornado'}
               ]);
+            });
+        })
+      )
+    );
+  });
+
+  describe('getGood()', () => {
+    it('should return an Promise<Good>',
+      async(
+        inject([GoodsDataService, XHRBackend], (service: GoodsDataService, mockBackend: MockBackend) => {
+          const mockResponse = new Good(228, 'Mock name');
+          mockBackend.connections.subscribe((connection) => {
+            connection.mockRespond(new Response(new ResponseOptions({
+              body: JSON.stringify({data: mockResponse})
+            })));
+          });
+
+          service.getGood(11)
+            .then((good: Good) => {
+              expect(good).toEqual(new Good(228, 'Mock name'));
             });
         })
       )

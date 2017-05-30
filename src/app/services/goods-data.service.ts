@@ -24,7 +24,8 @@ export class GoodsDataService {
     const url = `${this.goodsUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Good)
+      .then(response => response.json().data)
+      .then(goodAsObject => Good.createFromObject(goodAsObject))
       .catch(this.handleError);
   }
 
