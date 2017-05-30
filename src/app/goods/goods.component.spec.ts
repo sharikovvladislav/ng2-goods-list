@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { GoodsComponent } from './goods.component';
 import { GoodInfoComponent } from '../good-info/good-info.component';
@@ -10,15 +11,13 @@ describe('GoodsComponent', () => {
   let component: GoodsComponent;
   let fixture: ComponentFixture<GoodsComponent>;
   let goodsDataService;
-  const goodsDataServiceStub = {
-    getGoods: () => {}
-  };
   let spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ HttpModule ],
       declarations: [ GoodsComponent, GoodInfoComponent, GoodsListComponent ],
-      providers: [ { provide: GoodsDataService, useValue: goodsDataServiceStub } ]
+      providers: [ GoodsDataService ]
     })
     .compileComponents();
   }));
