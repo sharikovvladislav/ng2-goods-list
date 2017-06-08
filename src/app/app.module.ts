@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryGoodsDataService } from './backend-mocks/in-memory-goods.service';
+
 import { AppComponent } from './app.component';
 import { GoodsComponent } from './goods/goods.component';
 import { GoodsListComponent } from './goods-list/goods-list.component';
 import { GoodInfoComponent } from './good-info/good-info.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { MenuComponent } from './menu/menu.component';
+
+import { GoodsDataService } from './services/goods-data.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +28,10 @@ import { MenuComponent } from './menu/menu.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    InMemoryWebApiModule.forRoot(InMemoryGoodsDataService)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ GoodsDataService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
